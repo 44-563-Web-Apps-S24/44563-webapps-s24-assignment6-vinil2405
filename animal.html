@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
-    <head>Assignment 06</head>
+    <head><title>
+        Assignment 06
+    </title>
+    </head>
  
 <body>
 
 <h1>Animal game by Vinil</h1>
 
+<h2>Getting input</h2>
 <form>
     <label for="form1_age">What is your age </label>
     <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=30> <br>
@@ -15,8 +19,9 @@
 
     <input type="button" onclick="resolveForm()" value="Get values from form">
 </form>
-<div id="imageContainer">
-    <img src="apple juice.jpg" alt="Drink" onclick="selectImage()" width="150" height="150">
+
+<p id="result">This text will be replaced</p>
+
 </div>
 <form id="animalForm">
     <label for="hiddenAnimal">The hidden  animal type:</label> 
@@ -27,8 +32,10 @@
     <br>
     <button type="button" onclick= "checkAnimal()">Check the guess</button>
 </form>
-<div id="result"></div>
-<p id="result">This text will be replaced</p>
+
+<div id="imageContainer">
+    <img src="apple juice.jpg" alt="Drink" onclick="selectImage()" width="150" height="150">
+
 <script>
     let correct=0;
     let wrong=0;
