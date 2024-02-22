@@ -2,7 +2,10 @@
 <html>
     <head><title>
         Assignment 06
+
     </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     </head>
  
 <body>
@@ -21,8 +24,6 @@
 </form>
 
 <p id="result">This text will be replaced</p>
-
-</div>
 <form id="animalForm">
     <label for="hiddenAnimal">The hidden  animal type:</label> 
     <input type="password" id="hiddenAnimal" value="Chicken" required>
@@ -30,9 +31,10 @@
     <label for="guessAnimal">Guess the animal</label>
     <input type="text" id="guessAnimal" required>
     <br>
-    <button type="button" onclick= "checkAnimal()">Check the guess</button>
+    <button type="button" class="btn btn-success mt-3" onclick= "checkAnimal()">Check the guess</button>
 </form>
-
+    <div id="result1"></div>
+    <div id="bonus"></div>
 <div id="imageContainer">
     <img src="apple juice.jpg" alt="Drink" onclick="selectImage()" width="150" height="150">
 
@@ -53,8 +55,16 @@
                 wrong++;
                 alert("Grrrr");
             }
-            const resultElement = document.getElementById('result');
+            const resultElement = document.getElementById('result1');
             resultElement.innerHTML = `Correct: ${correct}, Wrong: ${wrong}`;
+            if(wrong>correct)
+            {
+                document.getElementById("bonus").innerHTML =  "Sorry, too many wrong guesses.";
+            }
+            else
+            {
+                document.getElementById("bonus").innerHTML =  "";
+            }
         }
 
 function resolveForm ()
